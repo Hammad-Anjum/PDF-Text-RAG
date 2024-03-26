@@ -1,6 +1,4 @@
-# PDF-Text-RAG
-
-## PDF Text Retrieval Augmented Generation
+# PDF Retrieval Text Augmented Generation
 This document describes a Streamlit application that allows users to search for information within a PDF document.
 
 ## Description
@@ -19,14 +17,16 @@ The application leverages OpenAI's large text embedding model to process the tex
 
 ### Enviornment variables
 The OpenAI API key needs to be set as an environment variable:
-'''python
-os.environ["OPENAI_API_KEY"] = "" 
-'''
+~~~python
+os.environ["OPENAI_API_KEY"] = ""
+~~~
 Replace the empty string with your actual OpenAI API key.
 
 ### Embeddings
 The code initializes the OpenAI embedding model for text:
-''' embeddings = OpenAIEmbeddings(model="text-embedding-3-large") '''
+~~~python
+ embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+~~~
 This model will be used to generate embeddings for the extracted PDF text.
 
 ### functions
@@ -39,7 +39,7 @@ This model will be used to generate embeddings for the extracted PDF text.
 - Takes a list of documents (pages) and returns a Chroma vector database.
 - Creates a Chroma vector database using the provided documents and embeddings.
 - The persist_directory argument specifies the directory where the database will be persisted.
-### search(query, db):
+#### search(query, db):
 - Takes a query string and a Chroma vector database as input and returns the answer to the query.
 - Creates an OpenAI instance with a temperature of 0.8.
 - Creates a ChatVectorDBChain instance using the OpenAI model and the Chroma database for retrieval in a conversational setting.
