@@ -19,7 +19,11 @@ The application leverages OpenAI's large text embedding model to process the tex
 
 ### Enviornment variables
 The OpenAI API key needs to be set as an environment variable:
-''' os.environ["OPENAI_API_KEY"] = "" '''
+'''
+{
+os.environ["OPENAI_API_KEY"] = "" 
+} 
+'''
 Replace the empty string with your actual OpenAI API key.
 
 ### Embeddings
